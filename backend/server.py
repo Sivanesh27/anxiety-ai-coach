@@ -1,11 +1,10 @@
-# /backend/server.py
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-# Temporary user storage (in memory)
 users = {}
 
 @app.route("/signup", methods=["POST"])
@@ -48,3 +47,7 @@ def get_progress(userid):
     if not user:
         return jsonify({"message": "User not found"}), 404
     return jsonify(user["progress"])
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # default to 5000 if PORT not set
+    app.run(host="0.0.0.0", port=port)
