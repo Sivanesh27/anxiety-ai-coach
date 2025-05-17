@@ -1,0 +1,42 @@
+<!-- /frontend/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Anxiety Coach</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="auth-section">
+    <h2>Login or Sign Up</h2>
+    <input type="text" id="userid" placeholder="User ID">
+    <input type="password" id="password" placeholder="Password">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="phone" placeholder="Phone Number">
+    <button onclick="signup()">Sign Up</button>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div id="main-app" style="display:none;">
+    <h1>Welcome, <span id="username"></span></h1>
+
+    <div id="questionnaire">
+      <h3>What triggers your anxiety?</h3>
+      <label><input type="checkbox" value="social"> Social situations</label><br>
+      <label><input type="checkbox" value="health"> Health worries</label><br>
+      <label><input type="checkbox" value="work"> Work stress</label><br>
+      <button onclick="submitTriggers()">Submit Triggers</button>
+    </div>
+
+    <div id="exposure"></div>
+    <div id="coach"></div>
+    <div id="mindfulness"></div>
+
+    <canvas id="progressChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
