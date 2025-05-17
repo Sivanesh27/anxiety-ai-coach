@@ -1,0 +1,7 @@
+# /backend/render.yaml
+services:
+  - type: web
+    name: ai-anxiety-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python server.py"    
