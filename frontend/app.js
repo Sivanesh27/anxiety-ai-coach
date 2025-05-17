@@ -13,7 +13,7 @@ function signup() {
 
 function login() {
   const payload = getUserData();
-  fetch('https://your-backend-url.onrender.com/login', {
+  fetch('https://anxiety-ai-coach.onrender.com/signup', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(payload)
